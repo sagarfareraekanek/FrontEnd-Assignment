@@ -1,0 +1,12 @@
+{
+  "name": "frontend-assignment",
+  "displayName": "frontend-assignment",
+  "expo": {
+    "name": "frontend-assignment",
+    "slug": "frontend-assignment",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
