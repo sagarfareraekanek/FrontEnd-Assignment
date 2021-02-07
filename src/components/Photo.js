@@ -1,5 +1,6 @@
 import React from 'react';
 import { View,Text, StyleSheet, Image } from 'react-native';
+import FastImage from 'react-native-fast-image';
 
 const Photo = function(props){
   const data = props.data;
@@ -16,8 +17,9 @@ const Photo = function(props){
  // console.log(`https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}.jpg`)
   return (
     <View >
-      <Text style={styleSet}>{`https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}.jpg`}</Text>
-      {/* <Image source={{uri: `https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}.jpg`}} style={styleSet}/> */}
+      {/* <Text style={styleSet}>{`https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}.jpg`}</Text> */}
+      <FastImage source={{uri: `https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}.jpg`}} style={styleSet}/>
+      {/* {console.log( `https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}.jpg`)} */}
     </View>
   );
 };
