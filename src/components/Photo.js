@@ -17,8 +17,9 @@ const Photo = function(props){
  // console.log(`https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}.jpg`)
   return (
     <View >
+      <Image source={{uri: `https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}.jpg`}} style={styleSet}/>
       {/* <Text style={styleSet}>{`https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}.jpg`}</Text> */}
-      <FastImage source={{uri: `https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}.jpg`}} style={styleSet}/>
+      {/* <FastImage source={{uri: `https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}.jpg`}} style={styleSet}/> */}
       {/* {console.log( `https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}.jpg`)} */}
     </View>
   );
