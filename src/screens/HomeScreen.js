@@ -1,24 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, SafeAreaView, ActivityIndicator, AsyncStorage } from 'react-native';
+import { StyleSheet, View, ActivityIndicator, AsyncStorage } from 'react-native';
 import SearchBar from '../components/SearchBar';
 import flickr from '../api/flickr';
 import Board from '../components/Board';
 import Dropdown from '../components/Dropdown';
 
 let pageNo = 0;
+
 const HomeScreen = function () {
   const [term, setTerm] = useState('');
   const [noOfCol, setCol] = useState(2);
   const [photos, setPhotos] = useState([]);
   const [refreshList, setRefreshList] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
-
-
-  const clearData = function () {
-    AsyncStorage.clear();
-  }
-
 
 
   const onColValueSelect = function (value) {
@@ -91,10 +85,6 @@ const HomeScreen = function () {
         }
     }
 
-      //  // console.log('-------Loader Start after API-----------')
-      //  console.log('---------response object----------')
-      //   console.log(response);
-
     )
     setIsLoading(false)
     //console.log('-------Loader check in component-----------')
@@ -107,13 +97,13 @@ const HomeScreen = function () {
         console.log(data.length)
       }
       else {
-        console.log('---No Data for Cat in Async----')
+        console.log('---No Data for in Async----')
       }
     })
 
 
     return (
-      <SafeAreaView>
+      <View style={{marginBottom:5}}>
         <SearchBar term={term} onTermChange={(newTerm) => {
           setTerm(newTerm)
           setRefreshList(false)
@@ -124,9 +114,9 @@ const HomeScreen = function () {
         }} />
 
         <ActivityIndicator size='large' color="#0000ff" animating={isLoading} hidesWhenStopped={true} />
-        <Board data={photos} noOfCol={noOfCol} onScrollToBottom={(flag) => {searchApi(flag)}} refreshList={refreshList}></Board>
+        <Board data={photos} noOfCol={noOfCol} onScrollToBottom={(flag) => {searchApi(flag)}} refreshList={refreshList} loading = {isLoading}></Board>
 
-      </SafeAreaView>
+      </View>
     )
   };
   const styles = StyleSheet.create({

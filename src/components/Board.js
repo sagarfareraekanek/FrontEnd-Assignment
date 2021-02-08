@@ -1,5 +1,5 @@
 import React from 'react';
-import { View,Text, StyleSheet, FlatList } from 'react-native';
+import { View,Text, StyleSheet, FlatList, ActivityIndicator } from 'react-native';
 import Photo from './Photo';
 
 let keyValue = 0;
